@@ -14,10 +14,10 @@ import java.util.List;
 @FeignClient(name ="INVENTORY-SERVICE")
 public interface InventoryClient {
 
-    @PostMapping("/api/v1/get-stock-list")
+    @PostMapping("/api/v1/inventory/check-stock")
     boolean checkProductStock(@RequestBody List<OrderItemRequest> orderItemRequestList);
 
-    @PostMapping("/api/v1/update-stock")
+    @PostMapping("/api/v1/inventory/update-stock")
     void updateInventory(@RequestBody List<OrderItemRequest> orderItemRequests);
 
 }

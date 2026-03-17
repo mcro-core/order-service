@@ -20,7 +20,7 @@ public class Order extends BaseEntity{
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
-        @Column(name = "order_number", nullable = false)
+        @Column(name = "order_number", nullable = false, unique = true)
         private String orderNumber;
 
         @Column(name = "user_id", nullable = false)
@@ -30,7 +30,7 @@ public class Order extends BaseEntity{
         private BigDecimal totalAmount;
 
         @Column(name = "discount_amount", nullable = false)
-        private BigDecimal discount_amount;
+        private BigDecimal discountAmount;
 
         @Column(name = "net_amount", nullable = false)
         private BigDecimal netAmount;

@@ -6,8 +6,9 @@ import org.springframework.data.domain.Page;
 
 public interface OrderService {
     public void createOrder(OrderRequest orderRequest);
-    public void updateOrder(OrderRequest orderRequest, Long orderId);
+    public void updateOrderStatus(String orderStatus, Long orderId);
     public void deleteOrder(Long orderId);
     public OrderResponseDto getOrderById(Long orderId);
     public Page<OrderResponseDto> getAllOrder(int page, int size);
+    public void cancelOrder(Long orderId);
 }

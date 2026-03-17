@@ -12,7 +12,10 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class ResponseProductDto {
-    private long productId;
+    private long id;
     private String productName;
+    private String sku;
     private BigDecimal price;
+    private Boolean hasDiscount;
+    private BigDecimal discountedPrice;
 }

@@ -18,8 +18,8 @@ public class OrderItems extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "product_name", nullable = false)
-    private String productName;
+    @Column(name = "product_code", nullable = false)
+    private Long productId;
 
     @Column(name = "unit_price", nullable = false)
     private BigDecimal unitPrice;
@@ -33,8 +33,11 @@ public class OrderItems extends BaseEntity {
     @Column(name = "quantity", nullable = false)
     private  Integer quantity;
 
-    @Column(name = "sub_tota", nullable = false)
-    private BigDecimal subTotal;
+    @Column(name = "net_amount", nullable = false)
+    private BigDecimal netAmount;
+
+    @Column(name = "total_amount", nullable = false)
+    private BigDecimal totalAmount;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id", referencedColumnName = "id")

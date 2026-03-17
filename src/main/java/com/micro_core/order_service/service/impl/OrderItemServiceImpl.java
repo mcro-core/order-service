@@ -2,10 +2,8 @@ package com.micro_core.order_service.service.impl;
 
 import com.micro_core.order_service.dto.request.OrderItemRequest;
 import com.micro_core.order_service.dto.response.OrderItemResponseDto;
-import com.micro_core.order_service.dto.response.OrderResponseDto;
 import com.micro_core.order_service.entity.OrderItems;
 import com.micro_core.order_service.exceptions.ResourceNotFoundException;
-import com.micro_core.order_service.model.OrderItem;
 import com.micro_core.order_service.repo.OrderItemsRepo;
 import com.micro_core.order_service.service.OrderItemService;
 import lombok.RequiredArgsConstructor;
@@ -15,9 +13,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.Base64;
-import java.util.stream.Collectors;
-
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -26,7 +21,7 @@ public class OrderItemServiceImpl implements OrderItemService {
     private final OrderItemsRepo orderItemsRepo;
 
     @Override
-    public void createOrderItem(OrderItem orderItem) {
+    public void createOrderItem(OrderItemRequest orderItem) {
 
         OrderItems orderItems = OrderItems.builder()
                 .productName(orderItem.getProductName())
